@@ -55,3 +55,8 @@ module.exports.play = async(song, client, message) => {
     
 };
 
+	// stage channel support
+	if(message.guild.me.voice?.channel.type==="GUILD_STAGE_VOICE"){
+
+		message.guild.me.voice.setSuppressed(false); //false = become speaker
+	}

@@ -99,13 +99,6 @@ You can type ${prefix}help to get bot commands list`)
   }
 }) 
 
- .connect()
-
-	// stage channel support
-	if(message.guild.me.voice?.channel.type==="GUILD_STAGE_VOICE"){
-
-		message.guild.me.voice.setSuppressed(false); //false = become speaker
-	}
 
 //insert token at .env first
 client.login(process.env.TOKEN)
