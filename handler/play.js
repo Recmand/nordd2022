@@ -9,6 +9,7 @@ module.exports.play = async(song, client, message) => {
       return queue.textChannel.send("🚫 Music queue ended.").catch(console.error);
     }
 
+  
     try {
       var stream = await ytdlDiscord(song.url);
     } catch (error) {
@@ -52,11 +53,5 @@ module.exports.play = async(song, client, message) => {
       console.error(error);
     }
 
-    
+
 };
-
-	// stage channel support
-	if(message.guild.me.voice?.channel.type==="GUILD_STAGE_VOICE"){
-
-		message.guild.me.voice.setSuppressed(false); //false = become speaker
-	}
