@@ -30,9 +30,10 @@
     "bindings": "^1.5.0",
     "pretty-ms": "^7.0.1",
     "discord-ytdl-core": "^5.0.4",
-    "lyrics-finder": "^21.4.0",
+    "lyrics-finder": "^21.7.0",
     "string-progressbar": "^1.0.1",
-    "novelcovid": "^1.2.6"
+    "novelcovid": "^1.2.6",
+    "@discordjs/voice": "^0.7.5"
   },
   "engines": {
     "node": "12.x"
