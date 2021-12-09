@@ -27,12 +27,6 @@ module.exports = {
         "I cannot speak in this voice channel, make sure I have the proper permissions!"
       );
 
-    module.exports.stage = async(stage, client, message) => {
-if(message.guild.me.voice?.channel.type==="GUILD_STAGE_VOICE"){
-
-		message.guild.me.voice.setSuppressed(false); //false = become speaker
-	}
-}
     
     const search = args.join(" ");
     const videoPattern = /^(https?:\/\/)?(www\.)?(youtube\.com|youtu\.?be)\/.+$/gi;

@@ -18,7 +18,6 @@ module.exports.play = async(song, client, message) => {
         module.exports.play(queue.songs[0], message);
       }
 
-      
     }
 
     const dispatcher = queue.connection
@@ -53,5 +52,6 @@ module.exports.play = async(song, client, message) => {
       console.error(error);
     }
 
+  
 
 };
