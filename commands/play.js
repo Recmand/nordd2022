@@ -19,6 +19,7 @@ module.exports = {
         .reply("You need to join a voice channel first!")
         .catch(console.error);
 
+    
     const permissions = channel.permissionsFor(client.user);
     if (!permissions.has("CONNECT"))
       return msg.reply("Cannot connect to voice channel, missing permissions");
@@ -26,7 +27,6 @@ module.exports = {
       return msg.reply(
         "I cannot speak in this voice channel, make sure I have the proper permissions!"
       );
-
     
     const search = args.join(" ");
     const videoPattern = /^(https?:\/\/)?(www\.)?(youtube\.com|youtu\.?be)\/.+$/gi;

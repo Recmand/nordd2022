@@ -54,17 +54,6 @@ commandFile.forEach(file => {
   console.log(`Loaded command ${command.name} with alias(es) => ${command.alias}`)
   })
 
-client.on("ready", () => {
-  const channel = client.channels.get("mychannelid");
-  if (!channel) return console.error("The channel does not exist!");
-  channel.join().then(connection => {
-    // Yay, it worked!
-    console.log("Successfully connected.");
-  }).catch(e => {
-    // Oh no, it errored! Let's log it to console :)
-    console.error(e);
-  });
-});
 
 client.on('message', msg => {
   if(msg.author.bot) return;

@@ -17,7 +17,6 @@ module.exports.play = async(song, client, message) => {
         queue.songs.shift();
         module.exports.play(queue.songs[0], message);
       }
-
       
     }
 
