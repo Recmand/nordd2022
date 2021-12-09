@@ -16,7 +16,9 @@ client.on("ready", async () => {
   console.log(`${client.user.tag} Bot ready to use`);
 
   const status = [
-    `-help`,
+    `n- help`,
+    `${client.users.cache.size} Users | n- help`, //gunanya untuk count user
+    `${client.guilds.cache.size} Servers | n- help` //gunanya untuk count server yang dimasuki oleh bot
     ]
   setInterval(() => {
     client.user.setActivity(status[Math.floor(Math.random() * status.length)], {type : "LISTENING"}) //watching bisa kalian ganti sama playing dan semacamnya
