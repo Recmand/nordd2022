@@ -54,9 +54,22 @@ commandFile.forEach(file => {
   console.log(`Loaded command ${command.name} with alias(es) => ${command.alias}`)
   })
 
+client.on("ready", () => {
+  const channel = client.channels.get("mychannelid");
+  if (!channel) return console.error("The channel does not exist!");
+  channel.join().then(connection => {
+    // Yay, it worked!
+    console.log("Successfully connected.");
+  }).catch(e => {
+    // Oh no, it errored! Let's log it to console :)
+    console.error(e);
+  });
+});
+
 client.on('message', msg => {
   if(msg.author.bot) return;
   if(!msg.guild) return;
+  
   
   if(msg.content == `<@${client.user.id}>`){
     const embed = new discord.MessageEmbed()
@@ -99,18 +112,6 @@ You can type ${prefix}help to get bot commands list`)
     console.log(`${msg.author.tag} using ${cmd} in ${msg.channel.name} | ${msg.guild.name}`)
   }
 }) 
-
-client.on("ready", () => {
-  const channel = client.channels.get("mychannelid");
-  if (!channel) return console.error("The channel does not exist!");
-  channel.join().then(connection => {
-    // Yay, it worked!
-    console.log("Successfully connected.");
-  }).catch(e => {
-    // Oh no, it errored! Let's log it to console :)
-    console.error(e);
-  });
-});
 
 //insert token at .env first
 client.login(process.env.TOKEN)
