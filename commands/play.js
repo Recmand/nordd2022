@@ -38,7 +38,7 @@ module.exports = {
     if (!videoPattern.test(args[0]) && playlistPattern.test(args[0])) {
       return client.commands.get("playlist").run(client, msg, args);
     }
-
+    
     const serverQueue = client.queue.get(msg.guild.id);
     const queueConstruct = {
       textChannel: msg.channel,
@@ -84,7 +84,7 @@ module.exports = {
           .catch(console.error);
       }
     }
-
+    
     if (serverQueue) {
       //return if member voice not same as bot
       if (channel.id !== serverQueue.channel.id)
