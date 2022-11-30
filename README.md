@@ -1,4 +1,4 @@
-# Music Bot Example
+# Nordd Music Bot
 
 # Setup
   1. Clone this repository
